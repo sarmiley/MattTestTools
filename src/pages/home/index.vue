@@ -8,6 +8,8 @@
 </template>
 
 <script>
+import HelloWorld from '../../components/HelloWorld'
+import MenuBtn from '../../components/MenuBtn'
 export default {
   name: 'home',
   components: {

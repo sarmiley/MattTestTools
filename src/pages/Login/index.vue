@@ -1,6 +1,6 @@
 <template>
   <div id="home">
-    <h1>登入</h1>
+    <h1></h1>
     <div class="type-area">
       <label>
         <small>Account</small>
