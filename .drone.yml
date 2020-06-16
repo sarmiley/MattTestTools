@@ -24,7 +24,6 @@ steps:
     password:
       from_secret: password
     pages_directory: dist
-    
 
 - name: selenium_test
   image: node:latest
