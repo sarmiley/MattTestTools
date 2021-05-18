@@ -111,7 +111,7 @@ export default {
         if (state) {
           window.close()
         } else {
-        window.location = 'https://ebank.standardchartered.com.tw'
+          window.location = 'https://ebank.standardchartered.com.tw'
         }
       }
     }
