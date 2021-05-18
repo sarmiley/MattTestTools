@@ -100,15 +100,19 @@ export default {
         25)
         window.location = 'scmbtw://'
       } else if (navigator.userAgent.match(/android/i)) {
-        let state = null
+        // let state = null
         try {
-          state = window.open('scmbtw://', '_blank')
-        } catch (e) {}
-        if (state) {
-          window.close()
-        } else {
+          // state = window.open('scmbtw://', '_system')
+          window.location = 'scmbtw://'
+        } catch (e) {
+          console.log('error: ', e)
           window.location = 'https://ebank.standardchartered.com.tw'
         }
+        // if (state) {
+        //   window.close()
+        // } else {
+        //   window.location = 'https://ebank.standardchartered.com.tw'
+        // }
       }
     }
   }
