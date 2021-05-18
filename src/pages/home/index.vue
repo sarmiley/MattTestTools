@@ -6,23 +6,23 @@
     </div>
     <div>
       <p>
-        <a href="https://deeplinks-6ea47.web.app/fund/application?fundId=111111"
+        <a href="scmbtw://fund/application?fundId=111111"
           >Deeplinks Demo for fund/application</a
         >
       </p>
       <p>
-        <a href="https://deeplinks-6ea47.web.app/fund/myCompare?fundId=222222"
+        <a href="scmbtw://fund/myCompare?fundId=222222"
           >Deeplinks Demo for fund/myCompare</a
         >
       </p>
       <p>
-        <a href="https://deeplinks-6ea47.web.app/fund/myWatch?fundId=333333"
+        <a href="scmbtw://fund/myWatch?fundId=333333"
           >Deeplinks Demo for fund/myWatch</a
         >
       </p>
       <p>
         <a
-          href="https://deeplinks-6ea47.web.app/fund/purchaseMultiFundCIP?fundList=999999&fundList=888888&fundList=777777"
+          href="scmbtw://fund/purchaseMultiFundCIP?fundList=999999&fundList=888888&fundList=777777"
           >Deeplinks Demo for fund/purchaseMultiFundCIP</a
         >
       </p>
@@ -31,28 +31,28 @@
       <h1>_blank</h1>
       <p>
         <a
-          href="https://deeplinks-6ea47.web.app/fund/application?fundId=111111"
+          href="scmbtw://fund/application?fundId=111111"
           target="_blank"
           >Deeplinks Demo for fund/application</a
         >
       </p>
       <p>
         <a
-          href="https://deeplinks-6ea47.web.app/fund/myCompare?fundId=222222"
+          href="scmbtw://fund/myCompare?fundId=222222"
           target="_blank"
           >Deeplinks Demo for fund/myCompare</a
         >
       </p>
       <p>
         <a
-          href="https://deeplinks-6ea47.web.app/fund/myWatch?fundId=333333"
+          href="scmbtw://fund/myWatch?fundId=333333"
           target="_blank"
           >Deeplinks Demo for fund/myWatch</a
         >
       </p>
       <p>
         <a
-          href="https://deeplinks-6ea47.web.app/fund/purchaseMultiFundCIP?fundList=999999&fundList=888888&fundList=777777"
+          href="scmbtw://fund/purchaseMultiFundCIP?fundList=999999&fundList=888888&fundList=777777"
           target="_blank"
         >
           Deeplinks Demo for fund/purchaseMultiFundCIP
