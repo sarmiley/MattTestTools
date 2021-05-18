@@ -5,6 +5,9 @@
       <button @click="goToUrl()">前往</button>
     </div>
     <div>
+      <button @click="checkPlatform()">check Platform</button>
+    </div>
+    <div>
       <p>
         <a href="scmbtw://fund/fundApplication?fundId=111111"
           >Deeplinks Demo for fund/application</a
@@ -76,9 +79,37 @@ export default {
       deepUrl: ''
     }
   },
+  mounted () {
+    console.log(navigator.userAgent)
+  },
   methods: {
     goToUrl: function () {
       window.open(this.deepUrl, '_system')
+    },
+    checkPlatform: function () {
+      if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
+        let loadDateTime = new Date()
+        window.setTimeout(function () {
+          let timeOutDateTime = new Date()
+          if (timeOutDateTime - loadDateTime < 5000) {
+            window.location = 'https://ebank.standardchartered.com.tw'
+          } else {
+            window.close()
+          }
+        },
+        25)
+        window.location = 'scmbtw://'
+      } else if (navigator.userAgent.match(/android/i)) {
+        let state = null
+        try {
+          state = window.open('scmbtw://', '_blank')
+        } catch (e) {}
+        if (state) {
+          window.close()
+        } else {
+          window.location = 'https://ebank.standardchartered.com.tw'
+        }
+      }
     }
   }
 }
