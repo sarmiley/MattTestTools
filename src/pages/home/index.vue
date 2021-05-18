@@ -103,6 +103,7 @@ export default {
         let state = null
         try {
           state = window.open('scmbtw://', '_self')
+          console.log('state: ', state)
           // window.location = 'scmbtw://'
         } catch (e) {
           console.log('error: ', e)
