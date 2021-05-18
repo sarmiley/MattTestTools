@@ -6,17 +6,17 @@
     </div>
     <div>
       <p>
-        <a href="scmbtw://fund/application?fundId=111111"
+        <a href="scmbtw://fund/fundApplication?fundId=111111"
           >Deeplinks Demo for fund/application</a
         >
       </p>
       <p>
-        <a href="scmbtw://fund/myCompare?fundId=222222"
+        <a href="scmbtw://fund/fundMyCompare?fundId=222222"
           >Deeplinks Demo for fund/myCompare</a
         >
       </p>
       <p>
-        <a href="scmbtw://fund/myWatch?fundId=333333"
+        <a href="scmbtw://fund/fundMyWatch?fundId=333333"
           >Deeplinks Demo for fund/myWatch</a
         >
       </p>
@@ -31,21 +31,21 @@
       <h1>_blank</h1>
       <p>
         <a
-          href="scmbtw://fund/application?fundId=111111"
+          href="scmbtw://fund/fundApplication?fundId=111111"
           target="_blank"
           >Deeplinks Demo for fund/application</a
         >
       </p>
       <p>
         <a
-          href="scmbtw://fund/myCompare?fundId=222222"
+          href="scmbtw://fund/fundMyCompare?fundId=222222"
           target="_blank"
           >Deeplinks Demo for fund/myCompare</a
         >
       </p>
       <p>
         <a
-          href="scmbtw://fund/myWatch?fundId=333333"
+          href="scmbtw://fund/fundMyWatch?fundId=333333"
           target="_blank"
           >Deeplinks Demo for fund/myWatch</a
         >
