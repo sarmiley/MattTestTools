@@ -1,121 +1,170 @@
 <template>
-  <div id="home">
-    <div>
-      <input v-model="deepUrl" type="text">
-      <button @click="goToUrl()">前往</button>
+  <div>
+    <div class="prod-body">
+      <div class="prod-search-box">
+         <div class="full-url">
+            {{ fullUrl }}
+        </div>
+        <div>
+          <label>
+            Host：
+          </label>
+          <select v-model="domain">
+            <option value="https://eappointment.standardchartered.com.tw/scb/public/">eappointment</option>
+            <option value="https://localhost:8080/public/">localhost</option>
+          </select>
+           <label>routeName</label>
+          <input v-model="routeName" type="text">
+          <label>path：</label>
+          <input v-model="path" type="text">
+        </div>
+      </div>
+      <div class="btn-section">
+        <button class="btn btn-link" @click="goToUrlWithNewTab()">開新分頁前往</button>
+        <button class="btn btn-link" @click="goToUrlbySelf()">原頁轉導</button>
+      </div>
     </div>
-    <div>
-      <button @click="checkPlatform()">check Platform</button>
-    </div>
-    <div>
-      <p>
-        <a href="scmbtw://fund/fundApplication?fundId=111111"
-          >Deeplinks Demo for fund/application</a
-        >
-      </p>
-      <p>
-        <a href="scmbtw://fund/fundMyCompare?fundId=222222"
-          >Deeplinks Demo for fund/myCompare</a
-        >
-      </p>
-      <p>
-        <a href="scmbtw://fund/fundMyWatch?fundId=333333"
-          >Deeplinks Demo for fund/myWatch</a
-        >
-      </p>
-      <p>
-        <a
-          href="scmbtw://fund/purchaseMultiFundCIP?fundList=999999&fundList=888888&fundList=777777"
-          >Deeplinks Demo for fund/purchaseMultiFundCIP</a
-        >
-      </p>
-    </div>
-    <div>
-      <h1>_blank</h1>
-      <p>
-        <a
-          href="scmbtw://fund/fundApplication?fundId=111111"
-          target="_blank"
-          >Deeplinks Demo for fund/application</a
-        >
-      </p>
-      <p>
-        <a
-          href="scmbtw://fund/fundMyCompare?fundId=222222"
-          target="_blank"
-          >Deeplinks Demo for fund/myCompare</a
-        >
-      </p>
-      <p>
-        <a
-          href="scmbtw://fund/fundMyWatch?fundId=333333"
-          target="_blank"
-          >Deeplinks Demo for fund/myWatch</a
-        >
-      </p>
-      <p>
-        <a
-          href="scmbtw://fund/purchaseMultiFundCIP?fundList=999999&fundList=888888&fundList=777777"
-          target="_blank"
-        >
-          Deeplinks Demo for fund/purchaseMultiFundCIP
-        </a>
-      </p>
+    <div class="prod-body">
+      <div class="prod-search-box2">
+        <label>Custom URL：</label>
+        <input v-model="customUrl" type="text">
+      </div>
+      <div class="btn-section">
+        <button class="btn btn-link" @click="goToUrlWithNewTab(customUrl)">開新分頁前往</button>
+        <button class="btn btn-link" @click="goToUrlbySelf(customUrl)">原頁轉導</button>
+      </div>
     </div>
   </div>
 </template>
-
 <script>
-import HelloWorld from '../../components/HelloWorld'
-import MenuBtn from '../../components/MenuBtn'
 export default {
   name: 'home',
-  components: {
-    HelloWorld,
-    MenuBtn
-  },
   data () {
     return {
-      deepUrl: ''
+      customUrl: '',
+      path: '',
+      routeName: '',
+      domain: 'https://eappointment.standardchartered.com.tw/scb/public/'
     }
   },
   mounted () {
     console.log(navigator.userAgent)
   },
+  computed: {
+    fullUrl: function () {
+      let url = this.domain + 'redirectCenter' + '?routeName=' + this.routeName
+      if (this.path) {
+        return url + '&' + this.path
+      } else {
+        return url
+      }
+    }
+  },
   methods: {
-    goToUrl: function () {
-      window.open(this.deepUrl, '_system')
+    goToUrlbySelf: function (url) {
+      if (url) {
+        window.open(url, '_self')
+      } else {
+        window.open(this.fullUrl, '_self')
+      }
     },
-    checkPlatform: function () {
-      if (navigator.userAgent.match(/(iPhone|iPod|iPad);?/i)) {
-        let loadDateTime = new Date()
-        window.setTimeout(function () {
-          let timeOutDateTime = new Date()
-          if (timeOutDateTime - loadDateTime < 5000) {
-            window.location = 'https://ebank.standardchartered.com.tw'
-          } else {
-            window.close()
-          }
-        },
-        25)
-        window.location = 'scmbtw://'
-      } else if (navigator.userAgent.match(/android/i)) {
-        let state = null
-        try {
-          state = window.open('scmbtw://', '_self')
-          console.log('state: ', state)
-          // window.location = 'scmbtw://'
-        } catch (e) {
-          console.log('error: ', e)
-          // window.location = 'https://ebank.standardchartered.com.tw'
-        }
-        if (state) {
-          window.close()
-        } else {
-          window.location = 'https://ebank.standardchartered.com.tw'
-        }
+    goToUrlWithNewTab: function (url) {
+      if (url) {
+        window.open(url, '_system')
+      } else {
+        window.open(this.fullUrl, '_system')
       }
     }
   }
 }
 </script>
+<style scoped>
+.prod-body {
+  width: 75%;
+  background: #fff;
+  margin: 50px auto 40px auto;
+  padding: 10px;
+  position: relative;
+  box-shadow: 0 2px 4px 0 rgba(0, 0, 0, 0.2), 0 25px 50px 0 rgba(0, 0, 0, 0.1);
+}
+
+.prod-list {
+  margin: 20px auto;
+  position: relative;
+  z-index: 2;
+}
+
+.prod-list-item-price {
+  float: right;
+}
+
+.prod-search-text {
+  font-size: 0.8em;
+  color: #999;
+  margin: 5px;
+}
+
+.prod-search-box input, select{
+  text-align: center;
+  margin: 0 15px 0 0;
+  width: 15%;
+  font-size: 24px;
+  line-height: 1em;
+  border: 0;
+  color: inherit;
+  padding: 6px 15px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.prod-search-box2 input {
+  text-align: center;
+  margin: 0 15px 0 0;
+  width: 80%;
+  font-size: 24px;
+  line-height: 1em;
+  border: 0;
+  color: inherit;
+  padding: 6px 15px;
+  border: 1px solid #999;
+  box-shadow: inset 0 -1px 5px 0 rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+.btn-section {
+  margin: 10px auto;
+}
+
+.btn {
+    display: inline-block;
+    font-weight: 400;
+    line-height: 1.5;
+    color: #212529;
+    text-align: center;
+    text-decoration: none;
+    vertical-align: middle;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none;
+    background-color: transparent;
+    border: 1px solid transparent;
+    padding: .375rem .75rem;
+    font-size: 1rem;
+    border-radius: .25rem;
+    transition: color .15s ease-in-out,background-color .15s ease-in-out,border-color .15s ease-in-out,box-shadow .15s ease-in-out;
+}
+
+.btn-link {
+    font-weight: 400;
+    color: #0d6efd;
+    text-decoration: underline;
+}
+
+.full-url {
+  font-size: 30px;
+  margin: 18px 18px;
+}
+
+</style>
