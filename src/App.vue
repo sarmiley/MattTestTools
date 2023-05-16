@@ -22,7 +22,7 @@ export default {
   data () {
     return {
       menuData: [
-        { path: '/', name: 'Home' },
+        { path: '/home', name: 'home' },
         { path: '/deeplinkHelper', name: 'deeplinkHelper' }
       ]
     }

@@ -3,11 +3,11 @@
     <ul>
        <li class="nav" v-for="(item, index) in items" :key="item.name">
         <template v-if="index !== (items.length - 1)">
-          <router-link  :to="item.path">{{item.name}}</router-link>
+          <router-link :to="{name: item.name}">{{item.name}}</router-link>
           <span> | </span>
         </template>
         <template  v-else>
-          <router-link :to="item.path">{{item.name}}</router-link>
+          <router-link :to="{name: item.name}">{{item.name}}</router-link>
         </template>
         </li>
     </ul>
