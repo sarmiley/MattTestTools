@@ -4,6 +4,7 @@ import home from '@/pages/home'
 import login from '@/pages/Login'
 import success from '@/pages/success'
 import Translate from '@/pages/Translate'
+import DeeplinkHelper from '@/pages/DeeplinkHelper'
 
 Vue.use(Router)
 
@@ -16,6 +17,11 @@ export default new Router({
       path: '/',
       name: 'home',
       component: home
+    },
+    {
+      path: '/deeplinkHelper',
+      name: 'deeplinkHelper',
+      component: DeeplinkHelper
     },
     {
       path: '/translate',
