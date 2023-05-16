@@ -11,8 +11,13 @@ Vue.use(Router)
 export default new Router({
   // mode: 'hash',
   mode: 'history',
-  base: '/',
+  base: '/MattTest/',
   routes: [
+    {
+      path: '/',
+      name: 'home',
+      component: home
+    },
     {
       path: '/deeplinkHelper',
       name: 'deeplinkHelper',
@@ -32,11 +37,6 @@ export default new Router({
       path: '/success',
       name: 'success',
       component: success
-    },
-    {
-      path: '/',
-      name: 'home',
-      component: home
     }
 
   ]
