@@ -8,12 +8,10 @@ import DeeplinkHelper from '@/pages/DeeplinkHelper'
 
 Vue.use(Router)
 
-console.log('process.env.ROOT_PATH: ' + process.env.ROOT_PATH)
-
 export default new Router({
   // mode: 'hash',
   mode: 'history',
-  base: process.env.ROOT_PATH | '/',
+  base: '/MattTest/',
   routes: [
     {
       path: '/deeplinkHelper',
