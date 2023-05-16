@@ -9,8 +9,8 @@ import DeeplinkHelper from '@/pages/DeeplinkHelper'
 Vue.use(Router)
 
 export default new Router({
-  // mode: 'hash',
-  mode: 'history',
+  mode: 'hash',
+  // mode: 'history',
   base: '/MattTest/',
   routes: [
     {
@@ -48,6 +48,5 @@ export default new Router({
       name: 'home',
       component: home
     }
-
   ]
 })
