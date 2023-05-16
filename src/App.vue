@@ -1,8 +1,9 @@
 <template>
   <div id="app">
-    <div id="content">
+    <div class="content">
       <div class="content-header">
-        <div class="update-time-area">（Last Update: 2020/06/18）</div>
+        <menu-item :items="menuData"/>
+        <div class="update-time-area">（Last Update: 2023/05/16）</div>
       </div>
       <div class="content-body">
         <router-view/>
@@ -12,34 +13,24 @@
 </template>
 
 <script>
-import MenuBtn from './components/MenuBtn'
-import Menu from './components/Menu/index.vue'
+import MenuItem from './components/MenuItem/index.vue'
 export default {
   name: 'App',
   components: {
-    MenuBtn,
-    Menu
+    MenuItem
   },
   data () {
     return {
-      menuDatas: [
-        { path: '/pageList', name: 'PageList' },
+      menuData: [
         { path: '/', name: 'Home' },
-        { path: '/asyncAwait', name: 'Async' },
-        { path: '/translate', name: 'Translate' },
-        { path: '/NPS_EN', name: 'NPS_EN' },
-        { path: '/NPS_TW', name: 'NPS_TW' }
+        { path: '/deeplinkHelper', name: 'deeplinkHelper' }
       ]
     }
   }
 }
 </script>
 
-<style>
-body {
-  margin: 0;
-  padding: 0;
-}
+<style scoped>
 #app {
   font-family: 'Avenir', Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
@@ -47,6 +38,7 @@ body {
   text-align: center;
   color: #2c3e50;
 }
+
 .side {
   width: 6.875vw;
   height: 100vh;
@@ -55,11 +47,11 @@ body {
 }
 
 .content-header {
-  padding: 50px;
+  padding: 15px;
   margin-bottom: 10px;
-  font-size: 2.5em;
   background-color: rgb(197, 224, 255);
 }
+
 .update-time-area {
   text-align: right;
   float: right;
