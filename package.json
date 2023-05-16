@@ -1,5 +1,5 @@
 {
-  "name": "vuelab",
+  "name": "MattTest",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Matt Liu <sarmiley@gmail.com>",
@@ -13,7 +13,7 @@
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
     "build": "node build/build.js --rootPath=/MattTest/",
     "build-local": "node build/build.js --rootPath=/MattTest/",
-    "selenium_test": "mocha test/selenium_test/click.spec.js"
+    "selenium_test": "mocha test/selenium_test/loginSuccess.js && mocha test/selenium_test/loginFail.js"
   },
   "dependencies": {
     "axios": "^0.19.2",
@@ -79,6 +79,7 @@
     "webpack": "^3.6.0",
     "webpack-bundle-analyzer": "^2.9.0",
     "webpack-dev-server": "^3.1.11",
+
     "webpack-merge": "^4.1.0"
   },
   "engines": {

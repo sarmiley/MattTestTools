@@ -27,9 +27,13 @@ steps:
 
 - name: selenium_test
   image: node:latest
-  command: 
-    - npm ci
+  commands: 
     - npm run selenium_test
+
+services:
+  - name: selenium
+    image: selenium/standalone-chrome
+
 trigger:
   branch:
     - master
