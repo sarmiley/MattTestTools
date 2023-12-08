@@ -14,7 +14,7 @@ describe('LoginSuccess', function() {
     await driver.quit();
   })
   it('LoginSuccess', async function() {
-    await driver.get("https://sarmiley.github.io/MattTest/")
+    await driver.get("https://sarmiley.github.io/MattTestTools/")
     await driver.manage().window().setRect(1440, 801)
     await driver.findElement(By.css("p")).click()
     await driver.findElement(By.css(".type-area:nth-child(2) input")).click()

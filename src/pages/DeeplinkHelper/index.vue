@@ -9,11 +9,6 @@
         <div>
           <label> Host：</label>
           <select class="domain-select" v-model="domain">
-            <option
-              value="https://eappointment.standardchartered.com.tw/scb/public/"
-            >
-              eappointment
-            </option>
             <option value="https://localhost:8080/public/">localhost</option>
           </select>
           <label>routeName：</label>
@@ -54,7 +49,7 @@ export default {
       customUrl: '',
       path: '',
       routeName: '',
-      domain: 'https://eappointment.standardchartered.com.tw/scb/public/'
+      domain: ''
     }
   },
   mounted () {
