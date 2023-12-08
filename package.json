@@ -1,5 +1,5 @@
 {
-  "name": "MattTest",
+  "name": "MattTestTools",
   "version": "1.0.0",
   "description": "A Vue.js project",
   "author": "Matt Liu <sarmiley@gmail.com>",
@@ -11,8 +11,8 @@
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
     "lint": "eslint --ext .js,.vue src test/unit test/e2e/specs",
-    "build": "node build/build.js --rootPath=/MattTest/",
-    "build-local": "node build/build.js --rootPath=/MattTest/",
+    "build": "node build/build.js --rootPath=/MattTestTools/",
+    "build-local": "node build/build.js --rootPath=/MattTestTools/",
     "selenium_test": "mocha test/selenium_test/loginSuccess.js && mocha test/selenium_test/loginFail.js"
   },
   "dependencies": {
