@@ -11,7 +11,7 @@ Vue.use(Router)
 export default new Router({
   mode: 'hash',
   // mode: 'history',
-  base: '/MattTest/',
+  base: '/MattTestTools/',
   routes: [
     {
       path: '/deeplinkHelper',
